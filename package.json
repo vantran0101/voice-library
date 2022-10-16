@@ -1,31 +1,24 @@
 {
-  "name": "@hoaivan0101/voice-library-npm",
-  "version": "1.0.0",
-  "main": "index.ts",
+  "name": "@heitech/voice-library-npm",
+  "version": "1.0.12",
+  "description": "Heitech/voice-library-npm",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
   },
-  "author": "hoaivan0101",
+  "keywords": [],
+  "author": "DaiNT",
   "license": "ISC",
-  "devDependencies": {
-    "@babel/core": "^7.12.10",
-    "@babel/preset-env": "^7.12.11",
-    "rollup": "^2.36.0",
-    "rollup-plugin-babel": "^4.4.0",
-    "rollup-plugin-commonjs": "^10.1.0",
-    "rollup-plugin-node-resolve": "^5.2.0"
-  },
-  "dependencies": {
-    "lodash": "^4.17.21",
-    "mediasoup-client": "^3.6.57"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vantran0101/voice-library.git"
   },
-  "bugs": {
-    "url": "https://github.com/vantran0101/voice-library/issues"
-  },
-  "homepage": "https://github.com/vantran0101/voice-library#readme",
-  "description": ""
+  "dependencies": {
+    "mediasoup-client": "^3.6.57"
+  }
 }
