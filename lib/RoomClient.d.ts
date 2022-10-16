@@ -8,7 +8,6 @@ export declare class RoomClient {
     webcamProducer: mediasoupClient.types.Producer | undefined;
     screenProducer: mediasoupClient.types.Producer | undefined;
     consumers: Record<string, any>;
-    eventId: number;
     requestJoinCallback: Function | undefined;
     responseRequestJoinCallback: Function | undefined;
     speaker: any | undefined;
@@ -16,7 +15,7 @@ export declare class RoomClient {
     text: string | undefined;
     callbackRecognizing: any;
     callbackRecognized: any;
-    constructor(eventId: number, callbackRecognizing: any, callbackRecognized: any);
+    constructor(callbackRecognizing: any, callbackRecognized: any);
     close(): void;
     open(): void;
     initTranslation(key: string, userLanguage?: string, translationLanguage?: string): Promise<void>;

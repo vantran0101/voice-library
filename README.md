@@ -24,11 +24,11 @@ It uses [Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/Speech
 
 ## Usage
 ```ts
-Import `RoomClient` from `react-speech-recognition-heitech`
+Import `RoomClient` from `@heitech/voice-library-npm`
 
 const App = () => {
     UseEffect(()=>{
-        const voiceRecognition = new RoomClient(key, region, (textRecognizing:string)=>{callbackonTextRecognizing(textRecognizing)},  (textRecognized)=>{callbackOnTextRecognized(textRecognized)});
+        const voiceRecognition = new RoomClient((textRecognizing:string)=>{callbackonTextRecognizing(textRecognizing)},  (textRecognized)=>{callbackOnTextRecognized(textRecognized)});
     },[])
     return ()
 }
@@ -46,7 +46,7 @@ You can get text with 2 functions callbackOnTextRecognizing, callbackOnTextRecog
 
 ## Init listening + speaking:
 ```ts
-Import `RoomClient` from `react-speech-recognition-heitech`
+Import `RoomClient` from `@heitech/voice-library-npm`
 
 const Room = () => {
 
@@ -141,13 +141,11 @@ const Room = () => {
 
  UseEffect(() => {
     const voiceRecognition = new RoomClient(
-      key,
-      region,
       (textRecognizing: string) => dispatch(onSpeech(textRecognizing)),
       (textRecognized: object) => dispatch(onSpeechFinished(textRecognizing))
     );
 
-    voiceRecognition.initTranslation('vi-VN', 'en-US');
+    voiceRecognition.initTranslation(key,'vi-VN', 'en-US');
   }, [])
 
 
@@ -160,9 +158,8 @@ const Room = () => {
 ### Others functions Client Room:
 - voiceRecognition.changeLanguage(language)
 - voiceRecognition.changetranslationLanguage(language)
-- voiceRecognition.startListening()
-- voiceRecognition.stopListening()
-- voiceRecognition.onSpeakResult()
+- voiceRecognition.close()
+- voiceRecognition.open()
 
 ## Lists devices:
 ```ts
@@ -176,6 +173,9 @@ voiceRecognition.listDevices().then(data => {
 - voiceRecognition.enableWebcam()
 - voiceRecognition.disableMic()
 - voiceRecognition.disableWebcam()
+
+## Git repo example:
+- https://github.com/vantran0101/hei-translate-lib-example
 
 ## Contributors 
 From [Heitech company](https://www.hei.io/company) :

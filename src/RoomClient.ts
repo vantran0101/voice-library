@@ -9,7 +9,6 @@ export class RoomClient {
     webcamProducer: mediasoupClient.types.Producer | undefined;
     screenProducer: mediasoupClient.types.Producer | undefined;
     consumers: Record<string, any> = new Map();
-    eventId: number;
     requestJoinCallback: Function | undefined;
     responseRequestJoinCallback: Function | undefined;
     speaker: any | undefined;
@@ -19,8 +18,7 @@ export class RoomClient {
     callbackRecognized: any;
 
 
-    constructor(eventId: number, callbackRecognizing: any, callbackRecognized: any) {
-        this.eventId = eventId;
+    constructor(callbackRecognizing: any, callbackRecognized: any) {
         this.callbackRecognizing = callbackRecognizing;
         this.callbackRecognized = callbackRecognized;
     }
