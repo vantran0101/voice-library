@@ -17,14 +17,12 @@ export class Listener {
     lastText = '';
     isEmitInLastCallback = false;
     lastEmittedText = '';
-    store: any;
 
-    constructor(translationLanguage: string, listenLanguage: string, key: string, region: string, store: any) {
+    constructor(translationLanguage: string, listenLanguage: string, key: string, region: string) {
         this.translationLanguage = translationLanguage;
         this.listenLanguage = listenLanguage;
         this.key = key;
         this.region = region;
-        this.store = store;
         this.recognizer = null;
         this.onTextCallback = noop;
         this.OnTextRecognizedCallback = noop;
@@ -41,10 +39,6 @@ export class Listener {
     }
 
     startListening() {
-        // if (!this.store?.isCurrentRoleHost) {
-        //     console.log("you are not Host")
-        //     return;
-        // }
         this.stopListening();
         this.lastOffset = 0;
         this.lastDuration = 0;
@@ -58,29 +52,6 @@ export class Listener {
         const audioConfig = window.SpeechSDK.AudioConfig.fromDefaultMicrophoneInput()
         this.recognizer = new window.SpeechSDK.TranslationRecognizer(speechConfig, audioConfig);
 
-        // this.recognizer.recognizeOnceAsync(
-        //     function (result) {
-        //         console.log('INNNN')
-
-        //         startRecognizeOnceAsyncButton.disabled = false;
-        //         if (result.reason === SpeechSDK.ResultReason.TranslatedSpeech) {
-        //             let translation = result.translations.get(language);
-        //             window.console.log(translation);
-        //             phraseDiv.innerHTML += translation;
-        //         }
-
-        //         recognizer.close();
-        //         recognizer = undefined;
-        //     },
-        //     function (err) {
-        //         startRecognizeOnceAsyncButton.disabled = false;
-        //         phraseDiv.innerHTML += err;
-        //         window.console.log('ERRRR ', err);
-
-        //         recognizer.close();
-        //         recognizer = undefined;
-        //     });
-
         this.recognizer.recognized = this._recognizerCallback.bind(this);
 
         this.recognizer.recognizing = this._recognizingNewCallback.bind(this);
@@ -91,14 +62,21 @@ export class Listener {
         console.log('nice');
     }
 
+    startFunc() {
+        if (!this.recognizer) {
+            return;
+        }
+        this.recognizer.startContinuousRecognitionAsync();
+    }
+
     stopListening() {
         if (!this.recognizer) {
             return;
         }
 
         this.recognizer.stopContinuousRecognitionAsync();
-        this.recognizer.close();
-        this.recognizer = null;
+        // this.recognizer.close();
+        // this.recognizer = null;
     }
 
     onText(callback: OnTextCallback) {

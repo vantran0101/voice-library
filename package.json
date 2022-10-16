@@ -1,12 +1,11 @@
 {
-  "name": "voice-library-npm",
+  "name": "@hoaivan0101/voice-library-npm",
   "version": "1.0.0",
-  "description": "",
   "main": "index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "hoaivan0101",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.12.10",
@@ -19,5 +18,14 @@
   "dependencies": {
     "lodash": "^4.17.21",
     "mediasoup-client": "^3.6.57"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vantran0101/voice-library.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vantran0101/voice-library/issues"
+  },
+  "homepage": "https://github.com/vantran0101/voice-library#readme",
+  "description": ""
 }
