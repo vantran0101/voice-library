@@ -41,10 +41,6 @@ export class RoomClient {
 
         this.listener = new Listener(userLanguage, translationLanguage, key, region);
         console.log('START');
-        console.log(translationLanguage);
-        console.log(userLanguage);
-        console.log(key);
-        console.log(region);
         this.listener.onText(this.onTextRecognizing.bind(this));
         this.listener.onTextRecognized(this.onTextRecognized.bind(this));
         // this.close.bind(this.listener)

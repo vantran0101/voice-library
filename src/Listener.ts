@@ -81,12 +81,10 @@ export class Listener {
     }
 
     onText(callback: OnTextCallback) {
-        console.log('yolo');
         this.onTextCallback = callback;
     }
 
     onTextRecognized(callback: OnTextRecognizedCallback) {
-        console.log('yolo OnTextRecognizedCallback');
         this.OnTextRecognizedCallback = callback;
     }
 

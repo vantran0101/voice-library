@@ -23,8 +23,10 @@ It uses [Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/Speech
 
 
 ## Usage
+
+In React.tsx:
 ```ts
-Import `RoomClient` from `@heitech/voice-library-npm`
+Import { RoomClient } from `@heitech/voice-library-npm`
 
 const App = () => {
     UseEffect(()=>{
@@ -46,7 +48,7 @@ You can get text with 2 functions callbackOnTextRecognizing, callbackOnTextRecog
 
 ## Init listening + speaking:
 ```ts
-Import `RoomClient` from `@heitech/voice-library-npm`
+Import { RoomClient } from `@heitech/voice-library-npm`
 
 const Room = () => {
 
@@ -60,15 +62,13 @@ const Room = () => {
 
    UseEffect(() => {
     const voiceRecognition = new RoomClient(
-      key,
-      region,
       (textRecognizing: string) => callbackonTextRecognizing(textRecognizing),
       (textRecognized: object) => callbackOnTextRecognized(textRecognized)
     );
 
     // init listener + speaker and translation
     // you can find out the language here: https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/language-support
-    voiceRecognition.initTranslation('vi-VN', 'en-US');
+    voiceRecognition.initTranslation(YOUR_KEY,'vi-VN', 'en-US');
   }, [])
 
   return (
