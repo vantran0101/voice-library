@@ -18,7 +18,7 @@ export declare class RoomClient {
     constructor(callbackRecognizing: any, callbackRecognized: any);
     close(): void;
     open(): void;
-    initTranslation(key: string, userLanguage?: string, translationLanguage?: string): Promise<void>;
+    initTranslation(key: string, translationLanguage?: string, userLanguage?: string): Promise<void>;
     onTextRecognizing(text: string): void;
     onTextRecognized(result: any): void;
     onRecognizingText(data: any): void;

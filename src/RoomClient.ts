@@ -35,7 +35,7 @@ export class RoomClient {
         this.listener?.startFunc();
     }
 
-    async initTranslation(key: string, userLanguage: string = 'en-US', translationLanguage: string = 'vi-VN') {
+    async initTranslation(key: string, translationLanguage: string = 'en-US', userLanguage: string = 'vi-VN') {
         await new Promise(resolve => setTimeout(resolve, 2000));
         const region = 'southeastasia';
 

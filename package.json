@@ -1,6 +1,6 @@
 {
   "name": "@heitech/voice-library-npm",
-  "version": "1.0.16",
+  "version": "1.0.23",
   "description": "Heitech/voice-library-npm",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",

@@ -1,3 +1,4 @@
+import './scriptjs';
 declare type OnTextCallback = (text: string) => void;
 declare type OnTextRecognizedCallback = (text: string) => void;
 export declare class Listener {

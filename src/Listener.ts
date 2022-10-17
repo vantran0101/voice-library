@@ -1,6 +1,7 @@
 // @ts-nocheck
 // import { AudioConfig, ResultReason, SpeechConfig, SpeechRecognizer, SpeechRecognitionEventArgs, Recognizer } from 'microsoft-cognitiveservices-speech-sdk';
 import { noop } from 'lodash';
+import './scriptjs';
 type OnTextCallback = (text: string) => void;
 type OnTextRecognizedCallback = (text: string) => void;
 
